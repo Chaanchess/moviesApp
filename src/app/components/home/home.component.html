@@ -1,0 +1,33 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">MoviesApp</h1>
+        <p class="lead">Esta es una aplicación para ver listados de películas.</p>
+    </div>
+</div>
+
+<div class="container">
+    <br />
+    <h1>Cartelera</h1>
+    <hr />
+    <app-galeria [peliculas]="pelisCartelera | slice:0:6"></app-galeria>
+    <br>
+    <h1>Películas Populares</h1>
+    <hr />
+    <app-galeria [peliculas]="populares | slice:0:6"></app-galeria>
+    <br>
+    <h1>Las mejores valoradas</h1>
+    <hr />
+    <app-galeria [peliculas]="seriesPopulares | slice:0:6"></app-galeria>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-4">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="https://es.linkedin.com/in/francisco-jos%C3%A9-s%C3%A1nchez-romero" target="_blank"> Francisco José Sánchez Romero</a>
+    </div>
+    <!-- Copyright -->
+
+</footer>
+<!-- Footer -->

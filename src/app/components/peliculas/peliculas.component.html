@@ -1,0 +1,20 @@
+<div *ngIf="pelicula" class="container main-container animated fadeIn fast">
+    <h1>{{pelicula.title}}</h1>
+    <div class="row">
+        <div class="col-md-5">
+            <img [src]="pelicula | peliculaImagen:true" alt="pelicula.original_title" class="img-thumbnail img-fluid">
+        </div>
+        <div class="col-md-7">
+            <h3>Sinopsis</h3>
+            <hr>
+            <p><strong>{{pelicula.tagline}}</strong></p>
+            <p class="text-justify">{{pelicula.overview}}</p>
+            <hr>
+            <p>Géneros: <span *ngFor="let item of pelicula.genres" class="badge badge-primary mr-2">{{item.name}}</span></p>
+            <p>Nota media: <span class="badge badge-success">{{pelicula.vote_average}}</span></p>
+            <p>Duración: <span class="badge badge-info">{{pelicula.runtime}} min</span></p>
+            <p>Fecha de salida: <span class="badge badge-warning">{{pelicula.release_date}}</span></p>
+            <button [routerLink]="['/'+regresar]" class="btn btn-outline-danger">Volver atrás</button>
+        </div>
+    </div>
+</div>

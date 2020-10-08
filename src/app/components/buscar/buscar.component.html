@@ -1,0 +1,19 @@
+<div class="row m-5 animated fadeIn fast">
+    <div class="col">
+        <input #termino type="text" (keyup)="buscar(termino.value)" class="form-control" placeholder="Buscar película...">
+    </div>
+
+
+
+    <div class="card-columns m-5">
+        <div class="card" *ngFor="let pelicula of peliculasServ.peliculas">
+            <img [src]="pelicula | peliculaImagen" class="card-img-top" [alt]="pelicula.original_title">
+            <div class="card-body">
+                <h5 class="card-title">{{pelicula.title}}</h5>
+                <p class="card-text text-justify">{{pelicula.overview | slice:0:300}}...</p>
+                <button [routerLink]="['/pelicula', pelicula.id, 'buscar']" type="button" class="btn btn-outline-primary btn-block">Ver más...</button>
+            </div>
+        </div>
+    </div>
+
+</div>
